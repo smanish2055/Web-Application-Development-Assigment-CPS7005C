@@ -4,6 +4,7 @@ const cors = require("cors");
 const dbConnect = require("./config/dbConnect");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutesV1");
+const productRoutes = require("./routes/productRoutes");
 
 dbConnect();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
 
 // Server
 const PORT = process.env.PORT || 5001;
